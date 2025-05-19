@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../image/dan-otis-OYFHT4X5isg-unsplash.jpg");
+  background-position: 0px -100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .auth-row {
+  margin-right: 150px;
+  background-color: white;
+  padding: 20px 70px 40px 70px;
+  border-radius: 10px;
+  width: 350px;
+}
+
+.container img {
+  width: 340px;
+  height: 340px;
+  margin-left: 220px;
+}
+
+.container .auth-row .auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .auth-row h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px;
+  margin: 30px 0 20px 0;
+}
+.container .auth-row .auth-form {
+  width: 100%;
+}
+.container .auth-row .auth-form .form-group {
+  width: 100%;
+}
+.container .auth-row .auth-form .form-group .input-group {
+  padding: 15px 50px 15px 15px;
+  border-radius: 10px;
+  outline: 0;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.container .auth-row .auth-form .form-group .bounce {
+  outline: 0;
+  border: 2px solid red;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-delay: 0.25s;
+}
+
+.container .auth-row .auth-form .form-btn {
+  width: 99%;
+  padding: 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  background-color: #0ba93b;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.container .auth-row .auth-form .error-message {
+  color: red;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.container .auth-row p.other {
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}

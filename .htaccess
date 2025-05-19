@@ -1,0 +1,45 @@
+# Aktifkan mesin rewrite
+RewriteEngine On
+
+# Base directory - sesuaikan dengan lokasi aplikasi Anda
+RewriteBase /skyrailticket
+
+# Aturan untuk melindungi folder config dan handler dari akses langsung browser
+# tapi tetap bisa diakses oleh script PHP internal
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(config|handler)/ [NC]
+RewriteRule ^ - [F,L]
+
+# Mengarahkan ke halaman 404 jika file tidak ditemukan
+ErrorDocument 404 /skyrailticket/404.php
+
+# Menghapus ekstensi .php dari URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Melindungi akses langsung ke folder assets dari browser
+# tetapi mengizinkan akses ke file CSS, JS, dan gambar
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/assets/ [NC]
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|ttf|woff|woff2|eot)$
+RewriteRule ^ - [F,L]
+
+# Menonaktifkan directory listing
+Options -Indexes
+
+# Melindungi file .htaccess
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Melindungi file konfigurasi tertentu dari akses langsung
+<FilesMatch "connection\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Pastikan file 404.php dapat diakses
+<Files "404.php">
+    Order Allow,Deny
+    Allow from all
+</Files>

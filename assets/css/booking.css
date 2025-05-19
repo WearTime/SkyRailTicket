@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --secondary-color: white;
+  --primary-color: #157fea;
+  --primary-hover: #0f6ad1;
+  --success-color: #4caf50;
+  --success-hover: #45a049;
+  --warning-color: #ffc107;
+  --warning-hover: #e0a800;
+  --danger-color: #f44336;
+  --danger-hover: #d32f2f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f4f7fe;
+  font-family: "Poppins", sans-serif;
+}
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-content h2 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Tombol umum */
+.add-booking,
+.add-ticket {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-booking:hover,
+.add-ticket:hover {
+  background-color: var(--primary-hover);
+}
+
+.table-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+tbody td {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+/* Action buttons umum */
+.action-buttons button {
+  margin-right: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+.detail-btn {
+  background-color: var(--success-color);
+}
+
+.edit-btn {
+  background-color: var(--warning-color);
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+}
+
+.detail-btn:hover {
+  background-color: var(--success-hover);
+}
+
+.edit-btn:hover {
+  background-color: var(--warning-hover);
+}
+
+.delete-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Modal Styles umum */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close,
+.close-modal {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.close:hover,
+.close-modal:hover {
+  color: #333;
+}
+
+.form-group,
+.modal-content label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+  display: block;
+}
+
+.form-control,
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus,
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(21, 127, 234, 0.25);
+}
+
+.modal-footer,
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.close-modal {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-modal:hover {
+  background-color: #b0b0b0;
+}
+
+.save-booking,
+.submit-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.save-booking:hover,
+.submit-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Error State */
+.form-control.error {
+  border-color: #ff3860;
+  box-shadow: 0 0 0 0.2rem rgba(255, 56, 96, 0.25);
+}
+
+/* Scrollable for tables on small screen */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Description truncation style */
+.deskripsi.truncated {
+  cursor: pointer;
+  color: #333;
+  position: relative;
+}
+
+.deskripsi.truncated:hover {
+  color: var(--primary-color);
+}
+
+.deskripsi.truncated:after {
+  content: "Click to view more";
+  display: block;
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+/* Image preview styling */
+.image-preview-container {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+}
+
+/* Textarea style */
+textarea.form-control {
+  resize: vertical !important;
+  min-height: 80px;
+}
+
+/* Delete modal btn styles */
+.delete-confirm-btn {
+  outline: 0;
+  border: 0;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: var(--danger-color);
+  transition: background-color 0.2s;
+}
+
+.delete-confirm-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+.cancel-btn {
+  outline: 0;
+  border: 0;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 15px;
+  color: black;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #f5f5f7;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #e2e2e7;
+}
+
+/* Select improved style */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

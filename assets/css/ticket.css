@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --secondary-color: white;
+}
+* {
+  box-sizing: border-box;
+}
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 2% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-col {
+  flex: 1;
+}
+
+.checkbox-group {
+  margin-top: 5px;
+}
+
+.submit-btn {
+  background-color: #157fea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0e62b5;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-name {
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+/* Additional styles for the image preview and textarea */
+.image-preview-container {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+}
+
+textarea.form-control {
+  resize: vertical !important; /* Allow resizing only vertically */
+  min-height: 80px;
+}
+.modal
+  .delete-modal-content
+  .delete-confirmation
+  .btn-container
+  .delete-confirm-btn {
+  outline: 0;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #dc3545;
+}
+
+.modal
+  .delete-modal-content
+  .delete-confirmation
+  .btn-container
+  .delete-confirm-btn:hover {
+  background-color: #c32f3e;
+}
+.modal .delete-modal-content .delete-confirmation .btn-container .cancel-btn {
+  outline: 0;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 15px;
+  color: black;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #f5f5f7;
+}
+
+.modal
+  .delete-modal-content
+  .delete-confirmation
+  .btn-container
+  .cancel-btn:hover {
+  background-color: #e2e2e7;
+}
+
+/* Style for error state */
+.form-control.error {
+  border-color: #ff3860;
+  box-shadow: 0 0 0 0.2rem rgba(255, 56, 96, 0.25);
+}
+
+/* Improved select styling */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px;
+}
+
+/* Additional styles for description truncation */
+.deskripsi.truncated {
+  cursor: pointer;
+  color: #333;
+  position: relative;
+}
+
+.deskripsi.truncated:hover {
+  color: #157fea;
+}
+
+.deskripsi.truncated:after {
+  content: "Click to view more";
+  display: block;
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+/* Detail Modal Styles */
+.ticket-details {
+  padding: 10px;
+}
+
+.detail-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-group {
+  flex: 1;
+}
+
+.detail-group label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.detail-group p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 8px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  min-height: 35px;
+}
+
+.detail-deskripsi {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.image-container {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 5px;
+}
+
+.close-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Delete Modal Styles */
+.delete-modal-content {
+  max-width: 500px;
+}
+
+.delete-confirmation {
+  padding: 10px;
+  text-align: center;
+}
+
+.delete-confirmation p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.delete-confirmation .warning {
+  color: #dc3545;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+select.form-control:focus {
+  border-color: #157fea;
+  box-shadow: 0 0 0 0.2rem rgba(21, 127, 234, 0.25);
+}
+main .main-content {
+  margin-left: 85px;
+  width: 100%;
+}
+
+main .main-content .image-header {
+  height: 170px;
+  width: 98%;
+  background-image: url("../image/blue-background.jpeg");
+  background-position: 0px -635px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 35px;
+}
+
+main .main-content .image-header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  color: white;
+}
+main .main-content .image-header p a {
+  color: inherit;
+  text-decoration: none;
+}
+main .main-content .image-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  color: white;
+}
+
+main .main-content .content {
+  background-color: white;
+  width: 98%;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+main .main-content .content .header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+main .main-content .content .header-content .search {
+  display: flex;
+  background-color: #f9f9f9;
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+main .main-content .content .header-content .search input {
+  background-color: #f9f9f9;
+  outline: 0;
+  border: 0;
+}
+main .main-content .content .header-content .search svg {
+  cursor: pointer;
+}
+main .main-content .content .header-content .add-ticket {
+  display: flex;
+  align-items: center;
+  padding: 4px 13px;
+  border-radius: 10px;
+  outline: 0;
+  border: 0;
+  gap: 6px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: #157fea;
+  font-style: normal;
+  color: white;
+  cursor: pointer;
+}
+
+main .main-content .content .header-content .add-ticket:hover {
+  background-color: rgb(17, 111, 205);
+}
+
+/* Updated table styles with border-radius */
+main .main-content .content .table-content {
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  margin-top: 30px;
+}
+
+main .main-content .content .table-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+main .main-content .content .table-content .table-header {
+  background-color: #f2f2f2;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+/* These specific selectors ensure the top corners are rounded */
+main .main-content .content table thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+main .main-content .content table thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+main .main-content .content .table-content .table-main {
+  margin-top: 10px;
+}
+
+main
+  .main-content
+  .content
+  .table-content
+  .table-main
+  tbody
+  tr:last-child
+  td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+main
+  .main-content
+  .content
+  .table-content
+  .table-main
+  tbody
+  tr:last-child
+  td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+main .main-content .content table thead {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  background-color: #e0e9e9;
+}
+
+main .main-content .content table tbody {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  background-color: #f9f9f9;
+}
+
+main .main-content .content table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+main .main-content .content .table-content table tbody tr td {
+  padding: 10px 15px;
+}
+
+main .main-content .content .table-content table thead tr th {
+  text-align: left;
+  padding: 10px 15px;
+}
+
+main .main-content .content .table-content table tbody tr td button {
+  outline: 0;
+  border: 0;
+  padding: 8px 8px 3px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+main .main-content .content .table-content table tbody tr td button.edit-btn {
+  background-color: #f7a200;
+}
+main .main-content .content .table-content table tbody tr td button.delete-btn {
+  background-color: #f40005;
+}
+
+main .main-content .content .table-content table tbody tr td button.detail-btn {
+  background-color: #3282a8;
+}
